@@ -1,0 +1,18 @@
+/* You can add global styles to this file, and also import other style files */
+@import "~@mdi/font/css/materialdesignicons.css";
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  background-image: url(https://cdn.hipwallpaper.com/i/46/41/c7KEnF.jpg);
+}
+button{
+    height: 2rem;
+    min-width: 10rem;
+    color: white;
+    background-color: rgb(255, 166, 0);
+    border: none;
+    font-size: 14pt;
+    margin:0.5rem;
+    border-radius: 0.75rem;
+}

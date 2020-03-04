@@ -1,0 +1,25 @@
+<div id="container">
+  <div id="modalResult" class="modal" *ngIf="!game">
+
+    <div id="newGame"><button *ngFor="let level of levels" (click)="startGame(level)">{{level.name}}</button>
+    </div>
+  </div>
+
+
+  <div id="game" *ngIf="game">
+    <h1 *ngIf="game.status.state === 'loose'">Perdiste</h1>
+    <h1 *ngIf="game.status.state === 'win'">Ganaste</h1>
+    <div id="controles">
+      <span>Tiempo:{{game.seconds |json}}</span>
+      <span>Minas: {{game.howManyMines}}</span>
+    </div>
+    <div id="matrix">
+      <div id="column" *ngFor="let column of game.matrix">
+        <app-tile *ngFor="let tile of column" [tile]="tile" (click)="onTileClicked(tile)"
+          (contextmenu)="onTileRightClicked(tile)">
+        </app-tile>
+      </div>
+    </div>
+    <button (click)="game = null">New game</button>
+  </div>
+</div>
