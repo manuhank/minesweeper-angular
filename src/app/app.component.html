@@ -1,25 +1,30 @@
-<div id="container">
-  <div id="modalResult" class="modal" *ngIf="!game">
+<div class="modal" *ngIf="!game">
+  <div class="column">
+    <button class="newGameButton" *ngFor="let level of levels" (click)="startGame(level)">{{level.name}} </button>
+  </div>
+</div>
 
-    <div id="newGame"><button *ngFor="let level of levels" (click)="startGame(level)">{{level.name}}</button>
+<div class="alert" *ngIf="game && game.status.value >1">
+  <div>
+    <h3 *ngIf="game.status.state === 'loose'" class="mdi mdi-emoticon-dead"> Perdiste</h3>
+    <h3 *ngIf="game.status.state === 'win'" class="mdi mdi-podium-first">Ganaste</h3>
+  </div>
+</div>
+
+<div id="game" class="column" *ngIf="game">
+
+  <div id="controles">
+    <app-display [icon]="'mdi-clock-outline'" class="control">{{game.seconds}}</app-display>
+    <button (click)="game = null" class="control">New game</button>
+    <app-display [icon]="'mdi-mine'" class="control">{{game.howManyMines}}</app-display>
+  </div>
+
+  <div id="matrix" class="card">
+    <div class="column" *ngFor="let column of game.matrix">
+      <app-tile *ngFor="let tile of column" [tile]="tile" (click)="onTileClicked(tile)"
+        (contextmenu)="onTileRightClicked(tile)">
+      </app-tile>
     </div>
   </div>
 
-
-  <div id="game" *ngIf="game">
-    <h1 *ngIf="game.status.state === 'loose'">Perdiste</h1>
-    <h1 *ngIf="game.status.state === 'win'">Ganaste</h1>
-    <div id="controles">
-      <span>Tiempo:{{game.seconds |json}}</span>
-      <span>Minas: {{game.howManyMines}}</span>
-    </div>
-    <div id="matrix">
-      <div id="column" *ngFor="let column of game.matrix">
-        <app-tile *ngFor="let tile of column" [tile]="tile" (click)="onTileClicked(tile)"
-          (contextmenu)="onTileRightClicked(tile)">
-        </app-tile>
-      </div>
-    </div>
-    <button (click)="game = null">New game</button>
-  </div>
 </div>

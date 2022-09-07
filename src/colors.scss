@@ -1,0 +1,21 @@
+$background: #dfd8d2;
+$primary: #f07540;
+$text : #3b3b3b;
+$danger: #9e2a2a;
+
+$backgroundLight: lighten($background, 2%);
+$backgroundLight2: lighten($background, 3%);
+$backgroundLight3: lighten($background, 8%);
+$backgroundDark: darken($background, 3%);
+$backgroundDark2: darken($background, 5%);
+$backgroundDark3: darken($background, 10%);
+
+$primaryLight: lighten($primary, 4%);
+$primaryLight2: lighten($primary, 7%);
+$primaryDark: darken($primary, 7%);
+$primaryDark2: darken($primary, 15%);
+
+$dangerLight: lighten($danger, 4%);
+$dangerLight2: lighten($danger, 7%);
+$dangerDark: darken($danger, 7%);
+$dangerDark2: darken($danger, 15%);

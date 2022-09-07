@@ -1,5 +1,5 @@
 import { Tile } from './game.models';
-import { throws } from 'assert';
+
 export class SimpleStateMachine {
     posiblesStates: any[];
     private _howManyStates: number;

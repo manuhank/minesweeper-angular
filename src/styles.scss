@@ -1,18 +1,81 @@
 /* You can add global styles to this file, and also import other style files */
 @import "~@mdi/font/css/materialdesignicons.css";
+@import "./colors.scss";
 body {
   margin: 0;
   padding: 0;
   font-family: Arial, Helvetica, sans-serif;
-  background-image: url(https://cdn.hipwallpaper.com/i/46/41/c7KEnF.jpg);
+  background-color: $background;
+  // background-image: url(https://cdn.hipwallpaper.com/i/46/41/c7KEnF.jpg);
 }
-button{
-    height: 2rem;
-    min-width: 10rem;
-    color: white;
-    background-color: rgb(255, 166, 0);
-    border: none;
-    font-size: 14pt;
-    margin:0.5rem;
-    border-radius: 0.75rem;
+
+button {
+  transition: all 0.6s ease-in-out;
+  color: $text;
+  font-weight: bold;
+  text-transform: uppercase;
+  border: none;
+  height: auto;
+  padding: 0.8rem;
+  // min-width: 10rem;
+  border-radius: 0.75rem;
+  background: $background;
+  box-shadow: 3px 3px 5px $backgroundDark2, -3px -3px 5px $backgroundLight2;
+
+  &:hover {
+    transition: all 0.6s ease-in-out;
+    box-shadow: 9px 9px 20px $backgroundDark3, -9px -9px 20px $backgroundLight3;
+  }
+  &:focus {
+    outline: 0;
+    transition: all 0.6s ease-in-out;
+    background: linear-gradient(145deg, $backgroundLight, $backgroundDark);
+    box-shadow: inset 3px 3px 4px $backgroundDark2, inset -3px -3px 4px $backgroundLight2;
+  }
+}
+.modal {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  color: white;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: $background;
+  justify-content: center;
+  align-items: center;
+  transition: all 0.2s ease-in-out;
+}
+.card {
+  padding: 1.2rem;
+  border-radius: 1.4rem;
+  background: $background;
+  box-shadow: 6px 6px 10px $backgroundDark2, -6px -6px 10px $backgroundLight2;
+}
+.alert {
+  transition: all 0.6s ease-in-out;
+  display: flex;
+  justify-content: center;
+  position: fixed;
+  top: 0;
+  div {
+    color: $text;
+    padding: 1.2rem;
+    border-radius: 0 0 1.4rem 1.4rem;
+    text-transform: uppercase;
+    background: $background;
+    box-shadow: 6px 6px 10px $backgroundDark2, -6px -6px 10px $backgroundLight2;
+    h3 {
+      margin: 0;
+    }
+  }
+}
+.column {
+  display: flex;
+  flex-direction: column;
+}
+.row {
+  display: flex;
+  flex-direction: row;
 }

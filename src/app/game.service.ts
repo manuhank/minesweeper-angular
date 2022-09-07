@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Game, Tile, Level, tileMarkPossiblesStates, gameStatusPossiblesStates } from './game.models';
-import { BehaviorSubject, of, interval, Observable } from 'rxjs';
+import { BehaviorSubject, interval, Observable } from 'rxjs';
 import { generateMinesPosition, getNeighborsOfTile, SimpleStateMachine } from './game.logic';
 @Injectable({ providedIn: 'root' })
 export class GameService {

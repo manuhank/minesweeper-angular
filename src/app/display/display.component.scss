@@ -1,0 +1,13 @@
+@import '../../colors.scss';
+:host {
+    color:$text;
+    text-align: center;
+    // min-width: 3rem;
+    padding: 1.2rem;
+    border-radius: 0.75rem;
+    background: $background;
+    box-shadow: 3px 3px 3px $backgroundDark2,
+                -3px -3px 3px $backgroundLight2,
+                inset 3px 3px 3px $backgroundDark2,
+                inset -3px -3px 3px $backgroundLight2;
+  }

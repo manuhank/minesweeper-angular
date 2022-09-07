@@ -1,9 +1,9 @@
-<span *ngIf="tile.revealed" class="mdi" [ngClass]="{
+<span *ngIf="tile.revealed ; else unrevelead" class="mdi" [ngClass]="{
     'mdi-mine': tile.value === 'mine'
   }">
     {{ icon() }}</span>
 
-<span *ngIf="!tile.revealed" class="mdi" [ngClass]="{
+<span #unrevelead class="mdi" [ngClass]="{
     'mdi-flag': tile.mark.state === 'flagged',
     'mdi-help': tile.mark.state === 'dubious'
   }"></span>

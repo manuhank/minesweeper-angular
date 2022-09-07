@@ -1,21 +1,31 @@
-:host{
-    display: flex;
-    height: 2rem;
-    width: 2rem;
-    padding: 0;
-    margin: 0;
-    background-color: greenyellow;
-    border-color: teal;
-    border-style: solid;
-    border-width: 2px;
-    justify-content: center;
-    align-items: center;
-    // pointer-events:|;
-    &.revealed{
-        background-color: rgb(29, 122, 65); 
-        &.mine{
-        background-color: #ff4444;
-        border-color: rgb(168, 29, 29);
+@import "../../colors.scss";
+:host {
+  transition: all 0.3s ease-in-out;
+  font-weight: bold;
+  display: flex;
+  height: 2rem;
+  width: 2rem;
+  padding: 0;
+  margin: 0.3rem;
+  justify-content: center;
+  align-items: center;
+  user-select: none;
+  border-radius: 8px;
+  background: linear-gradient(145deg, $primaryLight2, $primaryDark2);
+  box-shadow: -2px -2px 4px rgba($primaryLight2, 0.4), 2px 2px 3px $primaryDark2;
+  &:hover {
+    transition: all 0.3s ease-in-out;
+    background: linear-gradient(145deg, $primaryLight2, $primaryDark);
+    box-shadow: 0 0 8px $primaryLight2, -2.3px -2.3px 4px rgba($primaryLight2, 0.4), 2.3px 2.3px 4px $primaryDark2;
+  }
+  &.revealed {
+    transition: all 0.5s ease-in-out;
+    background: linear-gradient(145deg, $backgroundLight3, $backgroundDark2);
+    box-shadow: inset 3px 3px 3px $backgroundDark2, inset -3px -3px 3px $backgroundLight;
+    &.mine {
+      transition: all 0.5s ease-in-out;
+      background: linear-gradient(145deg, $dangerLight2, $dangerDark2);
+      box-shadow: inset 3px 3px 3px $dangerDark2, inset -3px -3px 3px $dangerLight;
     }
-    }
+  }
 }

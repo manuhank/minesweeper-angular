@@ -1,5 +1,4 @@
 import { SimpleStateMachine } from './game.logic';
-import { Observable } from 'rxjs';
 
 export interface Level {
     height: number,
